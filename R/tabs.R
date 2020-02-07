@@ -6,8 +6,9 @@
 #' @seealso \code{\link{menuItem}}, \code{\link{menuSubItem}},
 #'   \code{\link{tabItem}}. See \code{\link{sidebarMenu}} for a usage example.
 #' @export
-tabItems <- function(...) {
-  lapply(list(...), tagAssert, class = "tab-pane")
+tabItems <- function(..., .list = NULL) {
+  items <- c(list(...), .list)
+  lapply(items, tagAssert, class = "tab-pane")
 
   div(class = "tab-content", ...)
 }

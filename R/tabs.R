@@ -8,7 +8,7 @@
 #' @export
 tabItems <- function(..., .list = NULL) {
   items <- c(list(...), .list)
-  lapply(items, tagAssert, class = "tab-pane")
+  # lapply(items, tagAssert, class = "tab-pane")
 
   div(class = "tab-content", ...)
 }
